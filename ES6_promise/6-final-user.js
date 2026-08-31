@@ -9,7 +9,7 @@ export default function handleProfileSignup(firstName, lastName, fileName){
     .then((result) => result.map((item) => (
     {
       status: item.status,
-      value: item.value || item.reason
+      value: item.value || toString(item.reason)
     })
   )
 )
