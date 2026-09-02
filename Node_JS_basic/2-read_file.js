@@ -1,8 +1,10 @@
+const fs = require('node:fs');
+
 function countStudents(file) {
   /* use process.argv, */
   const cs = [];
   const swe = [];
-  const fs = require('node:fs');
+  
   fs.readFile(`${file}`, 'utf8', (err, data) => {
     if (err) {
       throw new Error('Cannot load the database');
