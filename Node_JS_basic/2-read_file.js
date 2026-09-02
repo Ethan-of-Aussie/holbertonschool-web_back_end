@@ -4,7 +4,7 @@ function countStudents(file) {
   /* use process.argv, */
   const cs = [];
   const swe = [];
-  
+
   fs.readFile(`${file}`, 'utf8', (err, data) => {
     if (err) {
       throw new Error('Cannot load the database');
@@ -13,16 +13,16 @@ function countStudents(file) {
     const students = lines.slice(1);
     console.log(`Number of students: ${students.length}`);
     for (const student of students) {
-        const parts = student.split(',');
-        const firstname = parts[0];
-        const field = parts[3];
-        
-        if (field === 'CS') {
-         cs.push(firstname);
-        }
-        if (field === 'SWE') {
-          swe.push(firstname);
-             }
+      const parts = student.split(',');
+      const firstname = parts[0];
+      const field = parts[3];
+
+      if (field === 'CS') {
+        cs.push(firstname);
+      }
+      if (field === 'SWE') {
+        swe.push(firstname);
+      }
     }
     console.log(`Number of students in CS: ${cs.length}. List: ${cs.join(', ')}
 Number of students in SWE: ${swe.length}. List: ${swe.join(', ')}`);
