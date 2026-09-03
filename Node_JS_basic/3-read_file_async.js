@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 
-async function countStudents(file) {
+function countStudents(file) {
   /* use process.argv, */
   const cs = [];
   const swe = [];
